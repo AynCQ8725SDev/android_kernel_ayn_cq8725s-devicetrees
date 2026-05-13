@@ -1,0 +1,83 @@
+&pm8010_m {
+	status = "disabled";
+};
+
+&pm8010_n {
+		status = "disabled";
+};
+
+&spmi_bus {
+	qcom,pmd802x@4 {
+		status = "disabled";
+	};
+
+	qcom,pmr735d@a {
+		status = "disabled";
+	};
+};
+
+&thermal_zones {
+	pm8010m_tz {
+		status = "disabled";
+	};
+
+	pm8010n_tz {
+		status = "disabled";
+	};
+
+	pmd802x_tz {
+		status = "disabled";
+	};
+
+	pmr735d_tz {
+		status = "disabled";
+	};
+};
+
+&qupv3_se4_i2c {
+	status = "disabled";
+};
+
+&tlmm {
+	fg_int_default: fg_int_default {
+		mux {
+			pins = "gpio129";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio129";
+			drive_strength = <2>;
+			bias-disable;
+		};
+	};
+};
+
+&pm8550_gpios {
+	pwm_out {
+		pwm_out_default: pwm_out_default {
+			pins = "gpio8";
+			function = "func1";
+			input-disable;
+			output-enable;
+			output-low;
+			bias-disable;
+			power-source = <1>;
+		};
+	};
+};
+
+&soc {
+	gpio5_pwm {
+		compatible = "gpio5-pwm";
+		pwms = <&pm8550_pwm_2 0 100000>;
+		gpio5-pwm-state = <1>;
+		gpio5-pwm-duty-ns = <10000>;
+		gpio5-pwm-period-ns = <50000>;
+		qcom,fan-en-gpio = <&tlmm 84 0>;
+		qcom,fan-fg-gpio = <&tlmm 129 0x2004>;
+		pinctrl-names = "default", "fg_int";
+		pinctrl-0 = <&pwm_out_default>;
+		pinctrl-1 = <&fg_int_default>;
+	};
+};

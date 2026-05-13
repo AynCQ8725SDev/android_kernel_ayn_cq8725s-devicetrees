@@ -1,0 +1,88 @@
+#include "../../../qcom/display/display/sun-sde-display.dtsi"
+
+&dsi_icna3520_1080p_dsc_cmd {
+	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
+	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
+	qcom,mdss-dsi-bl-min-level = <10>;
+	qcom,mdss-dsi-bl-max-level = <3413>;
+	qcom,mdss-brightness-max-level = <3413>;
+	qcom,mdss-dsi-bl-inverted-dbv;
+	qcom,platform-reset-gpio = <&tlmm 98 0>;
+	qcom,platform-bklight-en-gpio = <&tlmm 100 0>;
+};
+
+&qupv3_se4_i2c {
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	status = "okay";
+	qcom,i2c-touch-active = "focaltech,fts_ts";
+
+	focaltech@38 {
+		compatible = "focaltech,fts_ts";
+		reg = <0x38>;
+
+		interrupt-parent = <&tlmm>;
+		interrupts = <162 0x2008>;
+		focaltech,reset-gpio = <&tlmm 161 0x0>;
+		focaltech,irq-gpio = <&tlmm 162 0x2008>;
+		focaltech,display-coords = <0 0 1080 1920>;
+		focaltech,max-touch-number = <10>;
+		focaltech,ic-type = <0x35190489>;
+		focaltech,touch-type = "primary";
+
+		vdd-supply = <&L14B>;
+		vcc_i2c-supply = <&L12B>;
+
+		pinctrl-names = "pmx_ts_active", "pmx_ts_suspend", "pmx_ts_release";
+		pinctrl-0 = <&ts_active>;
+		pinctrl-1 = <&ts_int_suspend &ts_reset_suspend>;
+		pinctrl-2 = <&ts_release>;
+		panel = <&dsi_icna3520_1080p_dsc_cmd>;
+	};
+};
+
+&focaltech_fp {
+	panel = <&dsi_icna3520_1080p_dsc_cmd>;
+};
+
+&sde_esync0_active {
+	mux {
+		pins = "gpio89";
+	};
+
+	config {
+		pins = "gpio89";
+	};
+};
+
+&sde_esync0_suspend {
+	mux {
+		pins = "gpio89";
+	};
+
+	config {
+		pins = "gpio89";
+	};
+};
+
+&sde_dsi {
+	/delete-property/ vci-supply;
+	/delete-property/ vdd-supply;
+
+	qcom,dsi-default-panel = <&dsi_icna3520_1080p_dsc_cmd>;
+};
+
+&sde_dsi1 {
+	status = "disabled";
+};
+
+&mdss_mdp {
+	qcom,sde-max-bw-high-kbps = <28500000>;
+	connectors = <&sde_dsi &smmu_sde_unsec &smmu_sde_sec &sde_wb1 &sde_wb2 &sde_dp
+			&sde_cesta>;
+};
+
+&battery_charger {
+	qcom,display-panels = <&dsi_icna3520_1080p_dsc_cmd>;
+};
