@@ -108,8 +108,6 @@
 		      "pll_byte_clk1", "pll_dsi_clk1",
 		      "mdp_core_clk", "esync_clk_rcg";
 	vddio-supply = <&L12B>;
-	vci-supply = <&L13B>;
-	vdd-supply = <&L11B>;
 	tvdd-supply = <&L4B>;
 };
 
@@ -151,7 +149,7 @@
 
 &mdss_mdp {
 	connectors = <&sde_dsi &sde_dsi1 &smmu_sde_unsec &smmu_sde_sec &sde_wb1 &sde_wb2
-			&sde_dp &sde_cesta>;
+			&sde_dp>;
 };
 
 &dsi_vtdr6130_amoled_cmd {

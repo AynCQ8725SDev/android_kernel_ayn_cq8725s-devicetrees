@@ -28,6 +28,39 @@
 			linux,can-disable;
 		};
 	};
+
+	focaltech_fp: focaltech_fp {
+		compatible = "focaltech,fp";
+		interrupt-parent = <&pio>;
+		interrupts = <0x05 0x01>;
+		focaltech_fp,reset-gpio = <&tlmm 78 0>;
+		focaltech_fp,irq-gpio = <&tlmm 99 0>;
+		focaltech_fp,use-regulator;
+		ff_vdd-supply = <&L14B>;
+		focaltech_fp,read-chip;
+		pinctrl-names = "ff_pins_reset_low", "ff_pins_reset_high", "ff_pins_irq_as_int", "ff_pins_power_low", "ff_pins_power_high";
+		pinctrl-0 = <&fp_pins_rst_output0>;
+		pinctrl-1 = <&fp_pins_rst_output1>;
+		pinctrl-2 = <&fp_pins_eint>;
+	};
+
+	gpio5_pwm {
+		compatible = "gpio5-pwm";
+		pwms = <&pm8550_pwm_2 0 100000>;
+		gpio5-pwm-state = <0x01>;
+		gpio5-pwm-duty-ns = <10000>;
+		gpio5-pwm-period-ns = <50000>;
+		qcom,fan-en-gpio = <&tlmm 84 0>;
+		qcom,fan-fg-gpio = <&tlmm 129 0x2004>;
+		pinctrl-names = "default", "fg_int";
+		pinctrl-0 = <&pwm_out_default>;
+		pinctrl-1 = <&fg_int_default>;
+	};
+
+	extcon_demo: extcon-demo {
+		compatible = "extcon_demo";
+		status = "okay";
+	};
 };
 
 &regulator_ocp_notifier {
@@ -130,7 +163,7 @@
 
 &pmih010x_haptics {
 	qcom,vmax-mv = <1700>;
-	qcom,lra-period-us = <7692>;
+	qcom,lra-period-us = <5880>;
 };
 
 &ufsphy_mem {
@@ -235,7 +268,7 @@
 };
 
 &qupv3_se5_i2c {
-	status = "ok";
+	status = "disabled";
 
 	#address-cells = <1>;
 	#size-cells = <0>;
@@ -267,6 +300,7 @@
 				0x1 0x3 0x3 0x1
 				/* Parameters for DP */
 				0x3 0x3 0x3 0x3>;
+		status = "disabled";
 	};
 };
 
@@ -278,8 +312,7 @@
 	pinctrl-names = "default";
 	pinctrl-0 = <&usb3phy_portselect_gpio>;
 	gpios = <&tlmm 61 0>;
-
-	ssusb_redriver = <&redriver>;
+	qcom,wcd_usbss = <0xffffffff>;
 
 	usb-role-switch;
 	port {
@@ -302,7 +335,7 @@
 &qupv3_se4_spi {
 	#address-cells = <1>;
 	#size-cells = <0>;
-	status = "ok";
+	status = "disabled";
 	qcom,touch-active = "st,fts";
 	qcom,la-vm;
 
@@ -334,6 +367,6 @@
 		qts,trusted-touch-io-sizes = <0x1000>;
 		qts,trusted-touch-vm-gpio-list = <&tlmm 48 0 &tlmm 49 0 &tlmm 50 0
 						&tlmm 51 0 &tlmm 161 0 &tlmm 162 0x2008>;
-
+		status = "disabled";
 	};
 };

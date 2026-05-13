@@ -17,6 +17,7 @@
 		reg = <0xc SPMI_USID>;
 		#address-cells = <1>;
 		#size-cells = <0>;
+		status = "disabled";
 
 		pmic-ecid@100 {
 			compatible = "qcom,pmic-ecid";
@@ -37,6 +38,7 @@
 		reg = <0xd SPMI_USID>;
 		#address-cells = <1>;
 		#size-cells = <0>;
+		status = "disabled";
 
 		pmic-ecid@100 {
 			compatible = "qcom,pmic-ecid";
@@ -59,6 +61,7 @@
 		polling-delay = <0>;
 		thermal-governor = "step_wise";
 		thermal-sensors = <&pm8010m_tz>;
+		status = "disabled";
 
 		trips {
 			trip0 {
@@ -86,6 +89,7 @@
 		polling-delay = <0>;
 		thermal-governor = "step_wise";
 		thermal-sensors = <&pm8010n_tz>;
+		status = "disabled";
 
 		trips {
 			trip0 {

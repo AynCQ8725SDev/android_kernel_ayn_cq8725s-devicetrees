@@ -11,7 +11,7 @@
 		flash-source = <&pm8550_flash0 &pm8550_flash1>;
 		torch-source = <&pm8550_torch0 &pm8550_torch1>;
 		switch-source = <&pm8550_switch2>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	led_flash_triple_rear_tele: qcom,camera-flash2 {
@@ -20,7 +20,7 @@
 		flash-source = <&pm8550_flash0 &pm8550_flash1>;
 		torch-source = <&pm8550_torch0 &pm8550_torch1>;
 		switch-source = <&pm8550_switch2>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	led_flash_triple_rear_ultrawide: qcom,camera-flash3 {
@@ -29,7 +29,7 @@
 		flash-source = <&pm8550_flash0 &pm8550_flash1>;
 		torch-source = <&pm8550_torch0 &pm8550_torch1>;
 		switch-source = <&pm8550_switch2>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	led_flash_asc_rear: qcom,camera-flash4 {
@@ -38,7 +38,7 @@
 		flash-source = <&pm8550_flash0 &pm8550_flash1>;
 		torch-source = <&pm8550_torch0 &pm8550_torch1>;
 		switch-source = <&pm8550_switch2>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	led_flash_rear_aux: qcom,camera-flash5 {
@@ -47,12 +47,12 @@
 		flash-source = <&pm8550_flash0 &pm8550_flash1>;
 		torch-source = <&pm8550_torch0 &pm8550_torch1>;
 		switch-source = <&pm8550_switch2>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	qcom,cam-res-mgr {
 		compatible = "qcom,cam-res-mgr";
-		status = "ok";
+		status = "disabled";
 	};
 };
 
@@ -68,7 +68,7 @@
 		rgltr-min-voltage = <2960000>;
 		rgltr-max-voltage = <2960000>;
 		rgltr-load-current = <119000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	actuator_rear_aux: qcom,actuator8 {
@@ -81,7 +81,7 @@
 		rgltr-min-voltage = <2960000>;
 		rgltr-max-voltage = <2960000>;
 		rgltr-load-current = <100000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	ois_wide: qcom,ois0 {
@@ -96,7 +96,7 @@
 		rgltr-min-voltage = <1800000 2960000 0>;
 		rgltr-max-voltage = <1800000 2960000 0>;
 		rgltr-load-current = <4000 220000 0>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	eeprom_tof1: qcom,eeprom7 {
@@ -132,7 +132,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	eeprom_rear_aux: qcom,eeprom8 {
@@ -168,7 +168,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	eeprom_wide: qcom,eeprom2 {
@@ -204,7 +204,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor7 {
@@ -245,7 +245,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor2 {
@@ -289,7 +289,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor8 {
@@ -332,7 +332,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 };
@@ -348,7 +348,7 @@
 		rgltr-min-voltage = <2960000>;
 		rgltr-max-voltage = <2960000>;
 		rgltr-load-current = <100000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	eeprom_tele: qcom,eeprom3 {
@@ -383,7 +383,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor3 {
@@ -425,7 +425,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 };
@@ -464,7 +464,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor5 {
@@ -505,13 +505,13 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 };
 
 
 &qupv3_se9_i2c {
-	status = "ok";
+	status = "disabled";
 	qcom,high-perf;
 	qcom,clk-freq-out = <1000000>;
 	qcom,pm-ctrl-client;
@@ -546,7 +546,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	 qcom,cam-sensor1 {
@@ -585,7 +585,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 };
 
@@ -595,7 +595,7 @@
 	dfs-index = <0>;
 	i2c-scl-hz = <1000000>;
 	qcom,pm-ctrl-client;
-	status = "ok";
+	status = "disabled";
 
 	actuator_UW_asc_rear: qcom,actuator@c {
 		cell-index = <1>;
@@ -607,7 +607,7 @@
 		rgltr-min-voltage = <2960000>;
 		rgltr-max-voltage = <2960000>;
 		rgltr-load-current = <100000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	eeprom_asc_rear: qcom,eeprom@50 {
@@ -643,7 +643,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	eeprom_i3c_UltraWide: qcom,eeprom@52 {
@@ -678,7 +678,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor@33,36008580000 {
@@ -728,7 +728,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 
 	qcom,cam-sensor@10 {
@@ -777,6 +777,6 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
-		status = "ok";
+		status = "disabled";
 	};
 };

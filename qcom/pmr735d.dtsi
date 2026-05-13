@@ -17,6 +17,7 @@
 		reg = <0xa SPMI_USID>;
 		#address-cells = <1>;
 		#size-cells = <0>;
+		status = "disabled";
 
 		pmic-ecid@100 {
 			compatible = "qcom,pmic-ecid";
@@ -48,6 +49,7 @@
 		polling-delay = <0>;
 		thermal-governor = "step_wise";
 		thermal-sensors = <&pmr735d_tz>;
+		status = "disabled";
 
 		trips {
 			pmr735d_trip0: trip0 {

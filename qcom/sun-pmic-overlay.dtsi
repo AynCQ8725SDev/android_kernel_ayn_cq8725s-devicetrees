@@ -64,6 +64,18 @@
 			power-source = <1>;
 		};
 	};
+
+	pwm_out {
+		pwm_out_default: pwm_out_default {
+			pins = "gpio8";
+			function = "func1";
+			input-disable;
+			output-enable;
+			output-low;
+			bias-disable;
+			power-source = <1>;
+		};
+	};
 };
 
 &pmk8550_gpios {

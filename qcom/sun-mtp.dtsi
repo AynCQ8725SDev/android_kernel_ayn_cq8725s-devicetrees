@@ -312,7 +312,7 @@
 	#address-cells = <1>;
 	#size-cells = <0>;
 
-	status = "ok";
+	status = "disabled";
 	qcom,touch-active = "st,fts";
 
 	st_fts@49 {
@@ -341,6 +341,7 @@
 		qts,trusted-touch-io-sizes = <0x1000>;
 		qts,trusted-touch-vm-gpio-list = <&tlmm 48 0 &tlmm 49 0 &tlmm 50 0
 						&tlmm 51 0 &tlmm 161 0 &tlmm 162 0x2008>;
+		status = "disabled";
 	};
 };
 
