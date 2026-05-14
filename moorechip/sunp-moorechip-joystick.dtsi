@@ -8,6 +8,7 @@
 		regulator-max-microvolt = <3300000>;
 		enable-active-high;
 		gpio = <&tlmm 87 GPIO_ACTIVE_HIGH>;
+    	vin-supply = <&joystick_vdd_reg>;
 	};
 };
 
@@ -123,6 +124,7 @@
 		regulator-max-microvolt = <3300000>;
 		enable-active-high;
 		gpio = <&tlmm 88 GPIO_ACTIVE_HIGH>;
+    	vin-supply = <&joystick_vdd_reg>;
 	};
 };
 
@@ -289,9 +291,6 @@
 		compatible = "moorechip,joystick";
 		vdd-supply = <&joystick_vdd_reg>;
 		levelshifter-supply = <&joystick_levelshifter_reg>;
-
-		// moorechip,boot-gpio = <&tlmm ??? 1210 ??? GPIO_ACTIVE_LOW>;
-		// moorechip,reset-gpio = <&tlmm ??? 339 ??? GPIO_ACTIVE_LOW>;
 
 		moorechip,layout-nintendo;
 
