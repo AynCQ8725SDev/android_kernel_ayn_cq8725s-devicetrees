@@ -1047,10 +1047,10 @@
 			pinctrl-names = "default", "sleep", "shutdown";
 			pinctrl-0 = <&qupv3_se15_2uart_tx_active &qupv3_se15_2uart_rx_active>;
 			pinctrl-1 = <&qupv3_se15_2uart_sleep>;
-			pinctrl-2 = <&qupv3_se15_2uart_shutdown_tx &qupv3_se15_2uart_shutdown_rx>;
+			pinctrl-2 = <&qupv3_se15_2uart_tx_active &qupv3_se15_2uart_rx_active>;
 			qcom,wakeup-byte = <0xfd>;
 			qcom,auto-suspend-disable;
-			status = "ok";
+			status = "disabled";
 		};
 
 		/* Secondary Tounch */

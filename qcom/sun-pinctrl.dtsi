@@ -846,67 +846,41 @@
 
 	qupv3_se15_2uart_pins: qupv3_se15_2uart_pins {
 		qupv3_se15_2uart_tx_active: qupv3_se15_2uart_tx_active {
-			config {
-				bias-disable;
-				drive-strength = <2>;
+			mux {
 				pins = "gpio30";
+				function = "qup2_se7_l2";
 			};
 
-			mux {
-				function = "qup2_se7_l2";
+			config {
 				pins = "gpio30";
+				drive-strength = <2>;
+				bias-disable;
 			};
 		};
 
 		qupv3_se15_2uart_rx_active: qupv3_se15_2uart_rx_active {
-			config {
-				bias-disable;
-				drive-strength = <2>;
+			mux {
 				pins = "gpio31";
+				function = "qup2_se7_l3";
 			};
 
-			mux {
-				function = "qup2_se7_l3";
+			config {
 				pins = "gpio31";
+				drive-strength = <2>;
+				bias-disable;
 			};
 		};
 
 		qupv3_se15_2uart_sleep: qupv3_se15_2uart_sleep {
-			config {
-				bias-pull-down;
-				drive-strength = <2>;
+			mux {
 				pins = "gpio30", "gpio31";
+				function = "gpio";
 			};
 
-			mux {
-				function = "gpio";
+			config {
 				pins = "gpio30", "gpio31";
-			};
-		};
-
-		qupv3_se15_2uart_shutdown_tx: qupv3_se15_2uart_shutdown_tx {
-			config {
-				bias-pull-up;
 				drive-strength = <2>;
-				pins = "gpio30";
-			};
-
-			mux {
-				function = "gpio";
-				pins = "gpio30";
-			};
-		};
-
-		qupv3_se15_2uart_shutdown_rx: qupv3_se15_2uart_shutdown_rx {
-			config {
 				bias-pull-down;
-				drive-strength = <2>;
-				pins = "gpio31";
-			};
-
-			mux {
-				function = "gpio";
-				pins = "gpio31";
 			};
 		};
 	};
