@@ -58,6 +58,10 @@
 	};
 };
 
+&ibat_lvl1 {
+	temperature = <15000>;
+};
+
 &thermal_zones {
 	pm8010m_tz {
 		status = "disabled";

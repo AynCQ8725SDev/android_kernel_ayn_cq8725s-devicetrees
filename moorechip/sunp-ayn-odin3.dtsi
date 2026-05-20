@@ -6,6 +6,7 @@
 &sdhc_2 {
 	cd-gpios = <&tlmm 55 GPIO_ACTIVE_LOW>;
 	cd-debounce-delay-ms = <3000>;
+	post-power-on-delay-ms = <200>;
 };
 
 &qupv3_se4_spi {
