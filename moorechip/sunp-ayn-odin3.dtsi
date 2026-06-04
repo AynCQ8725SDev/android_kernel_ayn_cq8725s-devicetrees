@@ -17,13 +17,6 @@
 	qcom,no-client-based-bw-voting;
 };
 
-&soc {
-	extcon_demo: extcon-demo {
-		compatible = "extcon_demo";
-		status = "okay";
-	};
-};
-
 &pmih010x_haptics {
 	qcom,lra-period-us = <7692>;
 };
