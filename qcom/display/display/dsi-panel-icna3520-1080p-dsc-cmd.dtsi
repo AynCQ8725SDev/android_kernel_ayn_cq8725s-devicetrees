@@ -50,7 +50,6 @@
 			17000 15500 30000 8000 3000>;
 		qcom,mdss-dsi-panel-peak-brightness = <4200000>;
 		qcom,mdss-dsi-panel-blackness-level = <3230>;
-		qcom,mdss-dsi-enhance_color-switch;
 
 		qcom,mdss-dsi-display-timings {
 			timing@0 {
@@ -109,27 +108,6 @@
 					05 01 00 00 78 00 02 10 00 // Sleep In
 				];
 				qcom,mdss-dsi-off-command-state = "dsi_hs_mode";
-
-				qcom,mdss-dsi-default-color-command = [
-					39 01 00 00 00 00 03 FD 5A 5A // Manufacture Command Access Unlock
-
-					39 01 00 00 00 00 02 9F 00 // REG SEL - Group 0
-					39 01 00 00 00 00 13 B7 00 11 22 00 55 55 55 55 55 55 55 55 55 40 40 40 15 00
-					39 01 00 00 00 00 0A B8 00 00 02 28 17 02 28 17 00
-
-					39 01 00 00 00 00 03 FD A5 A5 // Manufacture Command Access Lock
-				];
-				qcom,cmd-mode-default-color-commands-state = "dsi_lp_mode";
-				qcom,mdss-dsi-enhance-color-command = [
-					39 01 00 00 00 00 03 FD 5A 5A // Manufacture Command Access Unlock
-
-					39 01 00 00	00 00 02 9F	00 // REG SEL - Group 0
-					39 01 00 00 00 00 13 B7 00 11 11 00 55 55 55 55 55 55 55 55 55 40 40 40 15 00
-					39 01 00 00 00 00 0A B8 00 00 02 41 17 02 28 17 00
-
-					39 01 00 00 00 00 03 FD A5 A5 // Manufacture Command Access Lock
-				];
-				qcom,cmd-mode-enhance-color-commands-state = "dsi_lp_mode";
 
 				qcom,compression-mode = "dsc";
 				qcom,mdss-dsc-slice-height = <12>;
@@ -196,27 +174,6 @@
 					05 01 00 00 78 00 02 10 00 // Sleep In
 				];
 				qcom,mdss-dsi-off-command-state = "dsi_hs_mode";
-
-				qcom,mdss-dsi-default-color-command = [
-					39 01 00 00 00 00 03 FD 5A 5A // Manufacture Command Access Unlock
-
-					39 01 00 00 00 00 02 9F 00 // REG SEL - Group 0
-					39 01 00 00 00 00 13 B7 00 11 22 00 55 55 55 55 55 55 55 55 55 40 40 40 15 00
-					39 01 00 00 00 00 0A B8 00 00 02 28 17 02 28 17 00
-
-					39 01 00 00 00 00 03 FD A5 A5 // Manufacture Command Access Lock
-				];
-				qcom,cmd-mode-default-color-commands-state = "dsi_lp_mode";
-				qcom,mdss-dsi-enhance-color-command = [
-					39 01 00 00 00 00 03 FD 5A 5A // Manufacture Command Access Unlock
-
-					39 01 00 00	00 00 02 9F	00 // REG SEL - Group 0
-					39 01 00 00 00 00 13 B7 00 11 11 00 55 55 55 55 55 55 55 55 55 40 40 40 15 00
-					39 01 00 00 00 00 0A B8 00 00 02 41 17 02 28 17 00
-
-					39 01 00 00 00 00 03 FD A5 A5 // Manufacture Command Access Lock
-				];
-				qcom,cmd-mode-enhance-color-commands-state = "dsi_lp_mode";
 
 				qcom,compression-mode = "dsc";
 				qcom,mdss-dsc-slice-height = <12>;
