@@ -19,5 +19,5 @@ dtb-y += $(sun-dtb-y)
 
 always-y        := $(dtb-y)
 subdir-y        := $(dts-dirs)
-subdir-y        += audio ../qcom/bt ../qcom/data display ../qcom/dsp ../qcom/eSE ../qcom/eva fingerprint ../qcom/graphics ../qcom/mm ../qcom/mmrm ../qcom/nfc ../qcom/synx ../qcom/video ../qcom/wlan
+subdir-y        += audio ../qcom/bt ../qcom/data display ../qcom/dsp ../qcom/eSE ../qcom/eva fingerprint ../qcom/graphics ../qcom/mm ../qcom/mmrm ../qcom/synx ../qcom/video ../qcom/wlan
 clean-files     := *.dtb *.dtbo
