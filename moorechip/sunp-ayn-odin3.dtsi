@@ -32,6 +32,10 @@
 	status = "disabled";
 };
 
+&redriver {
+	status = "disabled";
+};
+
 &usb0 {
 	/delete-property/ ssusb_redriver;
 	qcom,wcd_usbss = <&wcd_usbss>;
