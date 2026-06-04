@@ -79,6 +79,7 @@
 		status = "disabled";
 	};
 
+/*
 	cpu-1-9 {
 		trips {
 			thermal-engine-config {
@@ -508,4 +509,5 @@
 			};
 		};
 	};
+*/
 };
