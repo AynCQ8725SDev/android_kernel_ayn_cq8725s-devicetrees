@@ -79,8 +79,7 @@
 		status = "disabled";
 	};
 
-/*
-	cpu-1-9 {
+	cpu-0-0-0 {
 		trips {
 			thermal-engine-config {
 				temperature = <125000>;
@@ -175,7 +174,7 @@
 		};
 	};
 
-	cpu-1-10 {
+	cpu-0-5-0 {
 		trips {
 			thermal-engine-config {
 				temperature = <125000>;
@@ -482,7 +481,7 @@
 		};
 	};
 
-	usb-therm {
+	sys-therm-11 {
 		trips {
 			fan_thmbat0_config0: fan-thmbat0-config0 {
 				temperature = <43000>;
@@ -509,5 +508,4 @@
 			};
 		};
 	};
-*/
 };
